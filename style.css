@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: 'Poppins', arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1rem 0.3rem;
+  overflow-x: hidden;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.recipe-cont {
+  background-color: whitesmoke;
+  min-width: 300px;
+  width: 70%;
+  max-width: 500px;
+  overflow-x: hidden;
+  box-shadow: 0 0 10px 2px rgba(103, 103, 103, 0.3);
+}
+
+
+.search-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 0.7rem;
+}
+.search-bar {
+  font-family: inherit;
+  max-width: 50%;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  background-color: rgb(231, 231, 231);
+}
+.search-bar:focus {
+  outline: none;
+}
+.search-btn {
+  border:none;
+  font-size: 1.4rem;
+  background-color: transparent;
+  color: rgb(208, 208, 208);
+  cursor: pointer;
+}
+.search-btn:hover {
+  color: rgb(164, 164, 164);
+}
+
+.fav-meals-cont {
+  display: flex;
+  flex-direction: column;
+  background-color: #80f9ff;
+  padding: 0.3rem 1rem; 
+  min-height: 130px;
+}
+.fav-meals-cont h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0.3rem 0;
+}
+.meals-cont {
+  display: flex;
+  column-gap: 0.5rem;
+  padding: 0.3rem 0;
+  overflow-y: hidden;
+  transition: all 0.5s ease;
+}
+
+#meal-cont .label{
+  display: block;
+  margin: 1.1rem auto;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.meals-cont::-webkit-scrollbar {
+  display: none;
+}
+.meal {
+  max-width: 25%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.fav-meal-name {
+  font-size: 0.7rem;
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 65px;
+}
+.meal-pic {
+  position: relative;
+}
+.meal-logo {
+  border: 2px solid white ;
+  border-radius: 50%;
+  width: 3.5rem;
+}
+.del-logo {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  border: none;
+  background-color: transparent;
+  font-size: 0.9rem;
+  color: rgb(49, 49, 49);
+  opacity: 0;
+  cursor: pointer;
+}
+.meal:hover .del-logo {
+  opacity: 1; 
+}
+.del-logo:hover {
+  color:rgb(255, 50, 50);
+}
+.rand-recipe-cont {
+  padding: 1.2rem;
+}
+.rand-recipe-cont .label {
+  text-align: center;
+}
+
+.rand-recipe {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px 1px rgba(103, 103, 103, 0.3);
+  border-radius: 5px;
+  margin: 0.5rem 0 1.2rem;
+  cursor: pointer;
+}
+.rand-recipe:hover {
+  background-color: #e5efff;
+}
+.meal-thumb-img {
+  position: relative;
+  width: 100%;
+}
+.meal-thumb-img img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.label-random-rec {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  font-size: 0.8rem;
+  background-color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 4px 4px 0;
+}
+.meal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6% 5% 4% 5%;
+}
+.add-to-fav-btn {
+  color: rgb(121, 121, 121);
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.add-to-fav-btn.active i{
+  color: rgb(255, 107, 107);
+}
+
+#meal-info-cont {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  padding: 0.75rem 1rem;
+  overflow-y: scroll;
+  transform: translateY(0%);
+  transition: transform 0.5s ease;
+}
+#meal-info-cont::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+#meal-info-cont.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.popup-info {
+  background-color: white;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  min-width: 300px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px 5px rgba(103, 103, 103, 0.3);
+  overflow-y: scroll;
+}
+.popup-info::-webkit-scrollbar {
+  display: none;
+
+}
+.title-img-cont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.meal-title {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  margin: 1.5rem 0;
+}
+button.close-popup {
+  position: absolute;
+  top: -0.7rem;
+  right: -1.3rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+button.close-popup:hover {
+  color: rgb(255, 50, 50);
+}
+.info-meal-img {
+  display: block;
+  width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+.instruction-cont {
+  margin-bottom: 25px;
+}
+.popup-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.instruction {
+  text-indent: 1rem;
+  text-align: justify;
+  font-size: 1rem;
+}
+.ingredients-measures li {
+  font-size: 1rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+@media only screen and (max-width: 450px) {
+  button.del-logo {
+    opacity: 1;
+  }
+  .meal-title {
+    font-size: 1.2rem;
+  }
+  .popup-info h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .instruction {
+    font-size: 0.8rem;
+  }
+  .ingredients-measures li {
+    font-size: 0.8rem;
+  }
+}
