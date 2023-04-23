@@ -39,6 +39,7 @@ body {
   padding: 0.3rem 0.7rem;
   border: none;
   background-color: rgb(231, 231, 231);
+  font-size: 1.1rem;
 }
 .search-bar:focus {
   outline: none;
@@ -58,7 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #80f9ff;
-  padding: 0.3rem 1rem; 
+  padding: 0.8rem 1rem; 
   min-height: 130px;
 }
 .fav-meals-cont h3 {
@@ -127,7 +128,7 @@ body {
   color:rgb(255, 50, 50);
 }
 .rand-recipe-cont {
-  padding: 1.2rem;
+  padding: 0.5rem;
 }
 .rand-recipe-cont .label {
   text-align: center;
@@ -142,11 +143,15 @@ body {
   cursor: pointer;
 }
 .rand-recipe:hover {
-  background-color: #e5efff;
+  background-color: #c4dbff;
 }
 .meal-thumb-img {
   position: relative;
   width: 100%;
+  border-radius: 5px;
+}
+.meal-image {
+  border-radius: 5px;
 }
 .meal-thumb-img img {
   width: 100%;
@@ -270,6 +275,9 @@ button.close-popup:hover {
   font-weight: 600;
 }
 @media only screen and (max-width: 450px) {
+  .search-bar {
+    font-size: 0.9rem;
+  }
   button.del-logo {
     opacity: 1;
   }
