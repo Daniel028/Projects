@@ -100,7 +100,8 @@ async function fetchMealToCont() {
   mealCont.innerHTML='';
   const mealIds = getMealLs();
   if (mealIds.length === 0) {
-    mealCont.innerHTML = `<div class="label">Click Heart Button to Add to Favorites</div>`;
+    mealCont.innerHTML = `<div id="no-fav-label" class="label">Click Heart Button to Add to Favorites</div>`;
+    mealCont.style.justifyContent = "center"
   } else {
     for (let i=0; i<mealIds.length; i++) {
       // console.log(mealIds[i]);
@@ -108,6 +109,7 @@ async function fetchMealToCont() {
       const meal = await getMealById(mealId);
       addMealFav(meal);
     }
+    mealCont.style.justifyContent = "start"
   }
 
 }
