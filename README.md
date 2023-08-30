@@ -1,3 +1,4 @@
-#DEMO
+#Recipe App
 
-Some Description!
+API is from https://www.themealdb.com
+Developed by Daniel Cabasa
